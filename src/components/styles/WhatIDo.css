@@ -33,11 +33,18 @@
   color: var(--accentColor);
 }
 .what-box-in {
+  display: flex;
   flex-direction: column;
   height: 500px;
   margin-left: 200px;
   position: relative;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+.what-box-in-visible {
+  opacity: 1;
+  visibility: visible;
 }
 .what-content {
   width: 450px;

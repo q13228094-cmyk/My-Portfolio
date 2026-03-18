@@ -4,10 +4,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+  const whatBoxInRef = useRef<HTMLDivElement | null>(null);
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
   useEffect(() => {
+    if (whatBoxInRef.current) {
+      ScrollTrigger.create({
+        trigger: ".whatIDO",
+        start: "top 60%",
+        onEnter: () => {
+          whatBoxInRef.current?.classList.add("what-box-in-visible");
+        },
+        once: true,
+      });
+    }
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
         if (container) {
@@ -35,7 +46,7 @@ const WhatIDo = () => {
         </h2>
       </div>
       <div className="what-box">
-        <div className="what-box-in">
+        <div className="what-box-in" ref={whatBoxInRef}>
           <div className="what-border2">
             <svg width="100%">
               <line
@@ -87,9 +98,9 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>FRONTEND</h3>
-              <h4>Building Interactive UIs</h4>
-              <p>
+              <h3 className="title">FRONTEND</h3>
+              <h4 className="para">Building Interactive UIs</h4>
+              <p className="para">
                 Crafting performant, responsive interfaces with modern frameworks.
                 From SPAs to micro-frontends, I deliver pixel-perfect experiences.
               </p>
@@ -126,9 +137,9 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
-              <p>
+              <h3 className="title">BACKEND</h3>
+              <h4 className="para">Scalable Server Architecture</h4>
+              <p className="para">
                 Designing robust APIs and microservices. From CMS platforms to
                 complex business logic, I build backends that scale.
               </p>
