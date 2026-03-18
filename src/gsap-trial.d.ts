@@ -1,0 +1,14 @@
+declare module 'gsap-trial/SplitText';
+declare module 'gsap-trial/ScrollSmoother';
+declare module 'gsap-trial/ScrollTrigger';
+declare module 'gsap-trial/DrawSVGPlugin';
+declare module 'gsap-trial/InertiaPlugin';
+declare module 'gsap-trial/MorphSVGPlugin';
+declare module 'gsap-trial/MotionPathPlugin';
+declare module 'gsap-trial/CustomEase';
+declare module 'gsap-trial/CustomBounce';
+declare module 'gsap-trial/CustomWiggle';
+declare module 'gsap-trial/Flip';
+declare module 'gsap-trial/Observer';
+declare module 'gsap-trial/ScrollToPlugin';
+declare module 'gsap-trial/all';
